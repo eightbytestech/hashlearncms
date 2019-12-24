@@ -39,5 +39,21 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
     Route::post('content-pages/media', 'ContentPageController@storeMedia')->name('content-pages.storeMedia');
     Route::resource('content-pages', 'ContentPageController');
 
+    // Course Categories
+    Route::delete('course-categories/destroy', 'CourseCategoryController@massDestroy')->name('course-categories.massDestroy');
+    Route::resource('course-categories', 'CourseCategoryController');
+
+    // Course Subjects
+    Route::delete('course-subjects/destroy', 'CourseSubjectController@massDestroy')->name('course-subjects.massDestroy');
+    Route::resource('course-subjects', 'CourseSubjectController');
+
+    // Course Chapters
+    Route::delete('course-chapters/destroy', 'CourseChapterController@massDestroy')->name('course-chapters.massDestroy');
+    Route::resource('course-chapters', 'CourseChapterController');
+
+    // Course Chapter Groups
+    Route::delete('course-chapter-groups/destroy', 'CourseChapterGroupController@massDestroy')->name('course-chapter-groups.massDestroy');
+    Route::resource('course-chapter-groups', 'CourseChapterGroupController');
+
     Route::get('global-search', 'GlobalSearchController@search')->name('globalSearch');
 });

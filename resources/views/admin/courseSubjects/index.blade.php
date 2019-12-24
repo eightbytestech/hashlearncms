@@ -1,43 +1,37 @@
 @extends('layouts.admin')
 @section('content')
-@can('content_page_create')
+@can('course_subject_create')
     <div style="margin-bottom: 10px;" class="row">
         <div class="col-lg-12">
-            <a class="btn btn-success" href="{{ route("admin.content-pages.create") }}">
-                {{ trans('global.add') }} {{ trans('cruds.contentPage.title_singular') }}
+            <a class="btn btn-success" href="{{ route("admin.course-subjects.create") }}">
+                {{ trans('global.add') }} {{ trans('cruds.courseSubject.title_singular') }}
             </a>
         </div>
     </div>
 @endcan
 <div class="card">
     <div class="card-header">
-        {{ trans('cruds.contentPage.title_singular') }} {{ trans('global.list') }}
+        {{ trans('cruds.courseSubject.title_singular') }} {{ trans('global.list') }}
     </div>
 
     <div class="card-body">
-        <table class=" table table-bordered table-striped table-hover ajaxTable datatable datatable-ContentPage">
+        <table class=" table table-bordered table-striped table-hover ajaxTable datatable datatable-CourseSubject">
             <thead>
                 <tr>
                     <th width="10">
 
                     </th>
                     <th>
-                        {{ trans('cruds.contentPage.fields.id') }}
+                        {{ trans('cruds.courseSubject.fields.id') }}
                     </th>
                     <th>
-                        {{ trans('cruds.contentPage.fields.title') }}
+                        {{ trans('cruds.courseSubject.fields.name') }}
                     </th>
                     <th>
-                        {{ trans('cruds.contentPage.fields.category') }}
+                        {{ trans('cruds.courseSubject.fields.slug') }}
                     </th>
                     <th>
-                        {{ trans('cruds.contentPage.fields.tag') }}
-                    </th>
-                    <th>
-                        {{ trans('cruds.contentPage.fields.excerpt') }}
-                    </th>
-                    <th>
-                        {{ trans('cruds.contentPage.fields.featured_image') }}
+                        {{ trans('cruds.courseSubject.fields.category') }}
                     </th>
                     <th>
                         &nbsp;
@@ -56,11 +50,11 @@
 <script>
     $(function () {
   let dtButtons = $.extend(true, [], $.fn.dataTable.defaults.buttons)
-@can('content_page_delete')
+@can('course_subject_delete')
   let deleteButtonTrans = '{{ trans('global.datatables.delete') }}';
   let deleteButton = {
     text: deleteButtonTrans,
-    url: "{{ route('admin.content-pages.massDestroy') }}",
+    url: "{{ route('admin.course-subjects.massDestroy') }}",
     className: 'btn-danger',
     action: function (e, dt, node, config) {
       var ids = $.map(dt.rows({ selected: true }).data(), function (entry) {
@@ -92,21 +86,19 @@
     serverSide: true,
     retrieve: true,
     aaSorting: [],
-    ajax: "{{ route('admin.content-pages.index') }}",
+    ajax: "{{ route('admin.course-subjects.index') }}",
     columns: [
       { data: 'placeholder', name: 'placeholder' },
 { data: 'id', name: 'id' },
-{ data: 'title', name: 'title' },
+{ data: 'name', name: 'name' },
+{ data: 'slug', name: 'slug' },
 { data: 'category', name: 'categories.name' },
-{ data: 'tag', name: 'tags.name' },
-{ data: 'excerpt', name: 'excerpt' },
-{ data: 'featured_image', name: 'featured_image', sortable: false, searchable: false },
 { data: 'actions', name: '{{ trans('global.actions') }}' }
     ],
     order: [[ 1, 'desc' ]],
     pageLength: 100,
   };
-  $('.datatable-ContentPage').DataTable(dtOverrideGlobals);
+  $('.datatable-CourseSubject').DataTable(dtOverrideGlobals);
     $('a[data-toggle="tab"]').on('shown.bs.tab', function(e){
         $($.fn.dataTable.tables(true)).DataTable()
             .columns.adjust();

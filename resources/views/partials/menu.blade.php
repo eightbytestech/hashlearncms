@@ -128,6 +128,69 @@
                         </ul>
                     </li>
                 @endcan
+                @can('courses_management_access')
+                    <li class="nav-item has-treeview {{ request()->is('admin/course-categories*') ? 'menu-open' : '' }} {{ request()->is('admin/course-subjects*') ? 'menu-open' : '' }} {{ request()->is('admin/course-chapter-groups*') ? 'menu-open' : '' }} {{ request()->is('admin/course-chapters*') ? 'menu-open' : '' }}">
+                        <a class="nav-link nav-dropdown-toggle" href="#">
+                            <i class="fa-fw fas fa-book">
+
+                            </i>
+                            <p>
+                                <span>{{ trans('cruds.coursesManagement.title') }}</span>
+                                <i class="right fa fa-fw fa-angle-left"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            @can('course_category_access')
+                                <li class="nav-item">
+                                    <a href="{{ route("admin.course-categories.index") }}" class="nav-link {{ request()->is('admin/course-categories') || request()->is('admin/course-categories/*') ? 'active' : '' }}">
+                                        <i class="fa-fw fas fa-folder">
+
+                                        </i>
+                                        <p>
+                                            <span>{{ trans('cruds.courseCategory.title') }}</span>
+                                        </p>
+                                    </a>
+                                </li>
+                            @endcan
+                            @can('course_subject_access')
+                                <li class="nav-item">
+                                    <a href="{{ route("admin.course-subjects.index") }}" class="nav-link {{ request()->is('admin/course-subjects') || request()->is('admin/course-subjects/*') ? 'active' : '' }}">
+                                        <i class="fa-fw fas fa-tags">
+
+                                        </i>
+                                        <p>
+                                            <span>{{ trans('cruds.courseSubject.title') }}</span>
+                                        </p>
+                                    </a>
+                                </li>
+                            @endcan
+                            @can('course_chapter_group_access')
+                                <li class="nav-item">
+                                    <a href="{{ route("admin.course-chapter-groups.index") }}" class="nav-link {{ request()->is('admin/course-chapter-groups') || request()->is('admin/course-chapter-groups/*') ? 'active' : '' }}">
+                                        <i class="fa-fw fas fa-map-marker">
+
+                                        </i>
+                                        <p>
+                                            <span>{{ trans('cruds.courseChapterGroup.title') }}</span>
+                                        </p>
+                                    </a>
+                                </li>
+                            @endcan
+                            @can('course_chapter_access')
+                                <li class="nav-item">
+                                    <a href="{{ route("admin.course-chapters.index") }}" class="nav-link {{ request()->is('admin/course-chapters') || request()->is('admin/course-chapters/*') ? 'active' : '' }}">
+                                        <i class="fa-fw fas fa-folder-open">
+
+                                        </i>
+                                        <p>
+                                            <span>{{ trans('cruds.courseChapter.title') }}</span>
+                                        </p>
+                                    </a>
+                                </li>
+                            @endcan
+                        </ul>
+                    </li>
+                @endcan
                 <li class="nav-item">
                     <a href="#" class="nav-link" onclick="event.preventDefault(); document.getElementById('logoutform').submit();">
                         <p>
