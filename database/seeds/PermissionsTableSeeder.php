@@ -140,6 +140,86 @@ class PermissionsTableSeeder extends Seeder
                 'id'    => '33',
                 'title' => 'courses_management_access',
             ],
+            [
+                'id'    => '34',
+                'title' => 'course_category_create',
+            ],
+            [
+                'id'    => '35',
+                'title' => 'course_category_edit',
+            ],
+            [
+                'id'    => '36',
+                'title' => 'course_category_show',
+            ],
+            [
+                'id'    => '37',
+                'title' => 'course_category_delete',
+            ],
+            [
+                'id'    => '38',
+                'title' => 'course_category_access',
+            ],
+            [
+                'id'    => '39',
+                'title' => 'course_subject_create',
+            ],
+            [
+                'id'    => '40',
+                'title' => 'course_subject_edit',
+            ],
+            [
+                'id'    => '41',
+                'title' => 'course_subject_show',
+            ],
+            [
+                'id'    => '42',
+                'title' => 'course_subject_delete',
+            ],
+            [
+                'id'    => '43',
+                'title' => 'course_subject_access',
+            ],
+            [
+                'id'    => '44',
+                'title' => 'course_chapter_create',
+            ],
+            [
+                'id'    => '45',
+                'title' => 'course_chapter_edit',
+            ],
+            [
+                'id'    => '46',
+                'title' => 'course_chapter_show',
+            ],
+            [
+                'id'    => '47',
+                'title' => 'course_chapter_delete',
+            ],
+            [
+                'id'    => '48',
+                'title' => 'course_chapter_access',
+            ],
+            [
+                'id'    => '49',
+                'title' => 'course_chapter_group_create',
+            ],
+            [
+                'id'    => '50',
+                'title' => 'course_chapter_group_edit',
+            ],
+            [
+                'id'    => '51',
+                'title' => 'course_chapter_group_show',
+            ],
+            [
+                'id'    => '52',
+                'title' => 'course_chapter_group_delete',
+            ],
+            [
+                'id'    => '53',
+                'title' => 'course_chapter_group_access',
+            ],
         ];
 
         Permission::insert($permissions);

@@ -1,11 +1,11 @@
 <?php
 
 return [
-    'userManagement'    => [
+    'userManagement'     => [
         'title'          => 'User management',
         'title_singular' => 'User management',
     ],
-    'permission'        => [
+    'permission'         => [
         'title'          => 'Permissions',
         'title_singular' => 'Permission',
         'fields'         => [
@@ -21,7 +21,7 @@ return [
             'deleted_at_helper' => '',
         ],
     ],
-    'role'              => [
+    'role'               => [
         'title'          => 'Roles',
         'title_singular' => 'Role',
         'fields'         => [
@@ -39,7 +39,7 @@ return [
             'deleted_at_helper'  => '',
         ],
     ],
-    'user'              => [
+    'user'               => [
         'title'          => 'Users',
         'title_singular' => 'User',
         'fields'         => [
@@ -65,11 +65,11 @@ return [
             'deleted_at_helper'        => '',
         ],
     ],
-    'contentManagement' => [
+    'contentManagement'  => [
         'title'          => 'Content management',
         'title_singular' => 'Content management',
     ],
-    'contentCategory'   => [
+    'contentCategory'    => [
         'title'          => 'Categories',
         'title_singular' => 'Category',
         'fields'         => [
@@ -87,7 +87,7 @@ return [
             'deleted_at_helper' => '',
         ],
     ],
-    'contentTag'        => [
+    'contentTag'         => [
         'title'          => 'Tags',
         'title_singular' => 'Tag',
         'fields'         => [
@@ -105,7 +105,7 @@ return [
             'deleted_at_helper' => '',
         ],
     ],
-    'contentPage'       => [
+    'contentPage'        => [
         'title'          => 'Pages',
         'title_singular' => 'Page',
         'fields'         => [
@@ -131,8 +131,90 @@ return [
             'deleted_at_helper'     => '',
         ],
     ],
-    'coursesManagement' => [
+    'coursesManagement'  => [
         'title'          => 'Courses Management',
         'title_singular' => 'Courses Management',
+    ],
+    'courseCategory'     => [
+        'title'          => 'Categories',
+        'title_singular' => 'Category',
+        'fields'         => [
+            'id'                => 'ID',
+            'id_helper'         => '',
+            'name'              => 'Name',
+            'name_helper'       => '',
+            'slug'              => 'Slug',
+            'slug_helper'       => '',
+            'created_at'        => 'Created at',
+            'created_at_helper' => '',
+            'updated_at'        => 'Updated at',
+            'updated_at_helper' => '',
+            'deleted_at'        => 'Deleted at',
+            'deleted_at_helper' => '',
+        ],
+    ],
+    'courseSubject'      => [
+        'title'          => 'Subjects',
+        'title_singular' => 'Subject',
+        'fields'         => [
+            'id'                => 'ID',
+            'id_helper'         => '',
+            'name'              => 'Name',
+            'name_helper'       => '',
+            'slug'              => 'Slug',
+            'slug_helper'       => '',
+            'created_at'        => 'Created at',
+            'created_at_helper' => '',
+            'updated_at'        => 'Updated at',
+            'updated_at_helper' => '',
+            'deleted_at'        => 'Deleted at',
+            'deleted_at_helper' => '',
+            'category'          => 'Categories',
+            'category_helper'   => '',
+        ],
+    ],
+    'courseChapter'      => [
+        'title'          => 'Chapters',
+        'title_singular' => 'Chapter',
+        'fields'         => [
+            'id'                   => 'ID',
+            'id_helper'            => '',
+            'name'                 => 'Name',
+            'name_helper'          => '',
+            'slug'                 => 'Slug',
+            'slug_helper'          => '',
+            'created_at'           => 'Created at',
+            'created_at_helper'    => '',
+            'updated_at'           => 'Updated at',
+            'updated_at_helper'    => '',
+            'deleted_at'           => 'Deleted at',
+            'deleted_at_helper'    => '',
+            'chapter'              => 'Chapter',
+            'chapter_helper'       => '',
+            'chapter_group'        => 'Chapter Group',
+            'chapter_group_helper' => '',
+            'content'              => 'Content',
+            'content_helper'       => '',
+        ],
+    ],
+    'courseChapterGroup' => [
+        'title'          => 'Chapter Groups',
+        'title_singular' => 'Chapter Group',
+        'fields'         => [
+            'id'                => 'ID',
+            'id_helper'         => '',
+            'name'              => 'Name',
+            'name_helper'       => '',
+            'slug'              => 'Slug',
+            'slug_helper'       => '',
+            'subject'           => 'Subject',
+            'subject_helper'    => '',
+            'created_at'        => 'Created at',
+            'created_at_helper' => '',
+            'updated_at'        => 'Updated at',
+            'updated_at_helper' => '',
+            'deleted_at'        => 'Deleted at',
+            'deleted_at_helper' => '',
+        ],
     ],
 ];
